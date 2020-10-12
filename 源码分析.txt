@@ -8,3 +8,13 @@ TLRPC.Chat：chat id加负号
 TLRPC.EncryptedChat：id 左移32位的long
 MessageObject：getDialogId()
 
+
+message id:
+                long messageId = message.getId();
+                if (message.messageOwner.to_id.channel_id != 0) {
+                    messageId |= ((long) message.messageOwner.to_id.channel_id) << 32; // 注意是异或
+                }
+                
+                普通消息即为消息id，channel的消息，高32位为通道id
+
+
