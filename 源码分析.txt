@@ -1,0 +1,10 @@
+user id: 大于0的32位整数
+chat id: 32位整数加负号
+
+
+dialogId：
+TLRPC.User：为 user id
+TLRPC.Chat：chat id加负号
+TLRPC.EncryptedChat：id 左移32位的long
+MessageObject：getDialogId()
+
